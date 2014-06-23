@@ -41,14 +41,14 @@ end
 
 configure = Pit.get("bigamerican-bot")
 
-Twitter.configure do |conf|
-  conf.consumer_key       = configure["consumer_key"]
-  conf.consumer_secret    = configure["consumer_secret"]
-  conf.oauth_token        = configure["oauth_token"]
-  conf.oauth_token_secret = configure["oauth_token_secret"]
+client = Twitter::REST::Client.new do |conf|
+  conf.consumer_key        = configure["consumer_key"]
+  conf.consumer_secret     = configure["consumer_secret"]
+  conf.access_token        = configure["access_token"]
+  conf.access_token_secret = configure["access_token_secret"]
 end
 
-Twitter.update("Blog updated!!! #{URL}")
+client.update("Blog updated!!! #{URL}")
 logger.info('tweeted')
 f = open('previous.txt', "w")
 f.puts(latest_date)
