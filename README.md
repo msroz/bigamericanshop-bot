@@ -1,7 +1,7 @@
 bigamericanshop-bot
 ===================
 
-non-official twitter bot for big american shop blog
+non-official twitter bot for big american shop blog.  
 bigamericanshop-bot will tweet when blog updated!!
 
 https://twitter.com/bigamericanbot
